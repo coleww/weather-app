@@ -1,8 +1,7 @@
 (function () {
   'use strict';
 
-
-  angular.module('weatherApp', []).factory('GeoLocationService', ['$q', '$window', function ($q, $window) {
+  angular.module('geolocation', []).factory('GeoLocationService', ['$q', '$window', function ($q, $window) {
     var seattleCoords = {
       latitude: '47.6062',
       longitude: '122.3321'
@@ -17,7 +16,7 @@
       } else {
         $window.navigator.geolocation.getCurrentPosition(function (position) {
           // user allowed geolocation, return object containing latitude/longitude
-          deferred.resolve(position);
+          deferred.resolve(position.coords);
         }, function (err) {
           // user did not allow geolocation access, or something went wrong, so just use Seattle
           deferred.resolve(seattleCoords);

@@ -8,8 +8,10 @@ describe('GeoLocationService', function() {
   var errorCB;
 
   var fakeLocationData = {
-    latitude: '123.456',
-    longitude: '789.10'
+    coords: {
+      latitude: '123.456',
+      longitude: '789.10'
+    }
   };
 
   var seattleCoords = {
@@ -26,7 +28,7 @@ describe('GeoLocationService', function() {
   };
 
   beforeEach(function () {
-    module('weatherApp');
+    module('geolocation');
 
     module(function ($provide) {
       $provide.value('$window', fakeWindow);
@@ -51,7 +53,7 @@ describe('GeoLocationService', function() {
     })
     successCB(fakeLocationData);
     $scope.$apply(); // this triggers a digest cycle, which ensures the promise has been resolved.
-    expect(result).toEqual(fakeLocationData);
+    expect(result).toEqual(fakeLocationData.coords);
   });
 
   it('returns a promise that resolves to Seattle coords if geolocation fails', function() {
