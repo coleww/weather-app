@@ -7,10 +7,7 @@ module.exports = function(config) {
     files: [
       '../vendor/angular.min.js',
       '../../node_modules/angular-mocks/angular-mocks.js',
-      '**/*.module.js',
-      '*!(.module|.spec).js',
-      '!(bower_components)/**/*!(.module|.spec).js',
-      '**/*.spec.js'
+      '*/*.js'
     ],
 
     autoWatch: true,
