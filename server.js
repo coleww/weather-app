@@ -20,10 +20,10 @@ app.get('/api', function(req,res) {
   // TODO: check that lat/lon are passed as query params, otherwise return an error
 
   if (process.env.NODE_ENV === "production") {
-    res.send(JSON.stringify(sampleResponse));
-  } else {
     var apiUrl = createDarkSkyUrl(req);
     request(apiUrl).pipe(res);
+  } else {
+    res.send(JSON.stringify(sampleResponse));
   }
 });
 
