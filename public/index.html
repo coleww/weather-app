@@ -7,8 +7,11 @@
 
     <script src="vendor/angular.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/services/geolocation.service.js"></script>
+    <script src="js/components/forecast/forecast.component.js"></script>
+    <script src="js/components/forecast-day/forecast-day.component.js"></script>
   </head>
-  <body ng-controller="ForecastController">
-    {{stuff + 1}}
+  <body>
+    <forecast></forecast>
   </body>
 </html>
