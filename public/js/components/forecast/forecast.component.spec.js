@@ -7,7 +7,7 @@ describe('forecast Component', function () {
 
   beforeEach(angular.mock.inject(function (_$rootScope_, _$compile_) {
     scope = _$rootScope_.$new();
-    element = angular.element('<forecast five-day-forecast-data="data"></forecast>');
+    element = angular.element('<forecast forecast-data="data"></forecast>');
     element = _$compile_(element)(scope);
 
     // because the forecast component has nested forecast-day components, we can't truly test it in isolation

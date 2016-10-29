@@ -6,7 +6,7 @@
     component('forecast', {
       templateUrl: 'js/components/forecast/forecast.template.html',
       bindings: {
-        fiveDayForecastData: '<'
+        forecastData: '<'
       }
     });
 })();

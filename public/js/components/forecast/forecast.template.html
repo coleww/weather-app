@@ -1,7 +1,8 @@
 <div class="forecast-container">
-  <div class="todays-forecast"></div>
+  <h1>Five Day Forecast</h1>
   <div class="five-day-forecast">
-    <forecast-day ng-repeat="data in $ctrl.fiveDayForecastData" forecast-data="data">
+    <forecast-day ng-repeat="data in $ctrl.forecastData" forecast-data="data">
     </forecast-day>
   </div>
+  <a href="https://darksky.net/poweredby/" class="dark-sky-attribution">Powered by Dark Sky</a>
 </div>
