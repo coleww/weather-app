@@ -1,8 +1,7 @@
-{{$ctrl.coords.latitude}} // {{$ctrl.coords.longitude}}
-
 <div class="forecast-container">
-  <forecast-day ng-repeat="thing in $ctrl.stuff" thing="thing">
-
+  <div class="todays-forecast"></div>
+  <div class="five-day-forecast">
+    <forecast-day ng-repeat="data in $ctrl.fiveDayForecastData" forecast-data="data">
     </forecast-day>
-
+  </div>
 </div>
