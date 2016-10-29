@@ -9,6 +9,7 @@ module.exports = function(config) {
 
     files: [
       '../vendor/angular.min.js',
+      '../vendor/moment.min.js',
       '../../node_modules/angular-mocks/angular-mocks.js',
       '**/*.js',
       'components/*/*.html'
