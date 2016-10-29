@@ -12,9 +12,9 @@
     <script src="js/components/forecast/forecast.component.js"></script>
     <script src="js/components/forecast-day/forecast-day.component.js"></script>
   </head>
-  <body>
+  <body ng-controller="MainController">
     <h1>Your Five Day Forecast</h1>
-    <forecast></forecast>
+    <forecast five-day-forecast-data="fiveDayForecastData"></forecast>
     <a href="https://darksky.net/poweredby/" class="dark-sky-attribution">Powered by Dark Sky</a>
   </body>
 </html>
