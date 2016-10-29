@@ -17,7 +17,7 @@
         }, function () {
           // in a real production app, would return an actual error object to make debugging/error handling easier
           deferred.reject('error pulling data from the API');
-        })
+        });
       } else {
         deferred.reject('getForecast must be passed a coords object that contains latitude and longitude attrs');
       }
@@ -27,6 +27,6 @@
 
     return {
       getForecast: getForecast
-    }
+    };
   }]);
 })();

@@ -1,7 +1,6 @@
 describe('GeoLocationService', function() {
   var GeoLocationService;
   var $scope;
-  var $window;
 
   // spying on the success/error style callback that geolocation uses is super weird >_<
   var successCB;
@@ -41,7 +40,8 @@ describe('GeoLocationService', function() {
       errorCB = error;
     });
   });
-  beforeEach(angular.mock.inject(function (_GeoLocationService_, _$rootScope_, _$window_) {
+
+  beforeEach(angular.mock.inject(function (_GeoLocationService_, _$rootScope_) {
     GeoLocationService = _GeoLocationService_;
     $scope = _$rootScope_;
   }));
@@ -50,7 +50,7 @@ describe('GeoLocationService', function() {
     var result;
     GeoLocationService.getLocation().then(function (data) {
       result = data;
-    })
+    });
     successCB(fakeLocationData);
     $scope.$apply(); // this triggers a digest cycle, which ensures the promise has been resolved.
     expect(result).toEqual(fakeLocationData.coords);
@@ -60,7 +60,7 @@ describe('GeoLocationService', function() {
     var result;
     GeoLocationService.getLocation().then(function (data) {
       result = data;
-    })
+    });
     errorCB();
     $scope.$apply();
     expect(result).toEqual(seattleCoords);
@@ -72,7 +72,7 @@ describe('GeoLocationService', function() {
     fakeWindow.navigator = {};
     GeoLocationService.getLocation().then(function (data) {
       result = data;
-    })
+    });
     $scope.$apply();
     expect(result).toEqual(seattleCoords);
   });
