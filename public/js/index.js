@@ -15,7 +15,7 @@
       .then(DarkSkyService.getForecast)
       .then(function (forecastData) {
         // pull the forecast for the next 5 days out of the API response
-        $scope.forecastData = forecastData.data.daily.data.slice(1, 6);
+        $scope.forecastData = forecastData.data.daily.data.slice(0, 5);
       }).catch(function (err) {
         // in a production app we could handle this by re-trying, routing to an error page, or  display a helpful message if the error was caused by user input, etc.
         console.error(err);

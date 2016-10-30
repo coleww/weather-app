@@ -15,3 +15,5 @@ Data is pulled from [Dark Sky](https://darksky.net) via a proxy Express server.
 
 - get an API key from [Dark Sky](https://darksky.net/dev/account)
 - start the app with the DARK_SKY_KEY and NODE_ENV variables set: `DARK_SKY_KEY=YR_API_KEY NODE_ENV=production npm start`
+
+
