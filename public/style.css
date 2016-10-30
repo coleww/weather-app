@@ -1,0 +1,43 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.attribution {
+  text-align: center;
+}
+
+.forecast-container {
+  margin: 0 auto;
+  width: 75vw;
+  text-align: center;
+}
+
+.five-day-forecast {
+  display: flex;
+  margin: 0 auto;
+  width: 65vw;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.forecast-day {
+  border: 1px solid black;
+  padding: 5px;
+  max-width: 13vw;
+}
+
+.forecast-day .icon {
+  width: 50px;
+}
+
+.forecast-day .summary {
+
+}
+
+.forecast-day .temperature {
+
+}
+
+.forecast-day .date {
+
+}
