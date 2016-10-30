@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
 .attribution {
   text-align: center;
 }
@@ -15,15 +19,37 @@
 .five-day-forecast {
   display: flex;
   margin: 0 auto;
-  width: 65vw;
-  flex-wrap: wrap;
-  flex-direction: row;
+  width: 75vw;
+  align-items: center;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .five-day-forecast {
+    flex-direction: column;
+  }
+
+  .forecast-day {
+    width: 60vw;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  .five-day-forecast {
+    flex-direction: row;
+  }
+
+  .forecast-day {
+    max-width: 15vw;
+  }
 }
 
 .forecast-day {
   border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
   padding: 5px;
-  max-width: 13vw;
+  height: 300px;
 }
 
 .forecast-day .icon {
