@@ -1,14 +1,20 @@
 <div class="forecast-day">
-  <div class="icon-container">
+  <div class="forecast-item date">
+    {{$ctrl.formattedDate}}
+  </div>
+  <div class="forecast-item icon-container">
     <img ng-src="{{$ctrl.iconPath}}" class="icon">
   </div>
-  <div class="summary">
+  <div class="forecast-item summary">
     {{$ctrl.forecastData.summary}}
   </div>
-  <div class="temperature">
-    {{$ctrl.forecastData.temperatureMin}}&#176;F // {{$ctrl.forecastData.temperatureMax}}&#176;F
-  </div>
-  <div class="date">
-    {{$ctrl.formattedDate}}
+  <div class="clearfix"></div>
+  <div class="forecast-item temperature">
+    <div class="temperature-item">
+      low: {{$ctrl.forecastData.temperatureMin}}&#176;F
+    </div>
+    <div class="temperature-item">
+      high: {{$ctrl.forecastData.temperatureMax}}&#176;F
+    </div>
   </div>
 </div>

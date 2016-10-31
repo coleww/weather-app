@@ -48,7 +48,10 @@ describe('forecast-day Component', function () {
   it('should render the min/max temperature', function() {
     var element = createElement(defaultData);
     var temperature = element[0].getElementsByClassName('temperature')[0];
-    expect(temperature.textContent.trim()).toBe('52°F // 73°F');
+    // if we just pull out the text content, it will have a ton of whitespace in it
+    // so replace any duplicate white space with a single space, and trim() off any leading/trailing whitespace
+    var trimmedContent = temperature.textContent.replace(/\s+/g, ' ').trim();
+    expect(trimmedContent).toBe('low: 52°F high: 73°F');
   });
 
   it('should render out the date', function() {

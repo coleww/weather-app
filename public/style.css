@@ -11,16 +11,29 @@ body {
 }
 
 .forecast-container {
-  margin: 0 auto;
-  width: 75vw;
   text-align: center;
 }
 
 .five-day-forecast {
   display: flex;
   margin: 0 auto;
-  width: 75vw;
+  width: 85vw;
   align-items: center;
+}
+
+.forecast-day {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.forecast-item {
+  margin-bottom: 10px;
 }
 
 
@@ -32,6 +45,24 @@ body {
   .forecast-day {
     width: 60vw;
   }
+
+  .forecast-day .icon {
+    width: 80px;
+    float: none;
+  }
+
+  .forecast-day .summary {
+    text-align: center;
+  }
+
+  .temperature-item {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .forecast-day {
+    height: 225px;
+  }
 }
 
 @media only screen and (min-width: 1001px) {
@@ -40,30 +71,23 @@ body {
   }
 
   .forecast-day {
-    max-width: 15vw;
+    width: 17vw;
   }
-}
 
-.forecast-day {
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 5px;
-  height: 300px;
-}
+  .forecast-day .icon {
+    width: 65px;
+    float: left;
+  }
 
-.forecast-day .icon {
-  width: 50px;
-}
+  .forecast-day .summary {
+    text-align: left;
+  }
 
-.forecast-day .summary {
+  .temperature-item {
+    display: block;
+  }
 
-}
-
-.forecast-day .temperature {
-
-}
-
-.forecast-day .date {
-
+  .forecast-day {
+    height: 200px;
+  }
 }

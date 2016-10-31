@@ -33,9 +33,9 @@
         var icon;
         // if the icon attr exists in the array of icons we have, use that, if not, use a placeholder icon
         if (icons.indexOf(this.forecastData.icon) > -1) {
-          icon = this.forecastData.icon
+          icon = this.forecastData.icon;
         } else {
-          icon = 'default'
+          icon = 'default';
         }
 
         this.iconPath = 'icons/' + icon + '.svg';
