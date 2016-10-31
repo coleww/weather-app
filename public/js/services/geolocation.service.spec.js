@@ -13,20 +13,18 @@ describe('GeoLocationService', function() {
     }
   };
 
-  var seattleCoords = {
-    latitude: '47.6062',
-    longitude: '122.3321'
-  };
-
-  var fakeWindow = {
-    navigator: {
-      geolocation: {
-        getCurrentPosition: function (success, error) {}
-      }
-    }
-  };
+  var fakeWindow;
 
   beforeEach(function () {
+    // defining fakeWindow here because we manipulate it in one of our tests
+    // if we defined this outside of a beforeEach block, then if our tests were run in random order they would sometimes fail
+    fakeWindow = {
+      navigator: {
+        geolocation: {
+          getCurrentPosition: function (success, error) {}
+        }
+      }
+    };
     module('geolocation');
 
     module(function ($provide) {
@@ -56,24 +54,25 @@ describe('GeoLocationService', function() {
     expect(result).toEqual(fakeLocationData.coords);
   });
 
-  it('returns a promise that resolves to Seattle coords if geolocation fails', function() {
+  it('returns a promise that rejects with an error if geolocation fails', function() {
     var result;
-    GeoLocationService.getLocation().then(function (data) {
+    GeoLocationService.getLocation().catch(function (data) {
       result = data;
     });
     errorCB();
     $scope.$apply();
-    expect(result).toEqual(seattleCoords);
+    expect(result).toEqual('we could not get your forecast, please allow access access to your location and try again');
   });
 
-
-  it('returns a promise that resolves to Seattle coords if geolocation is unavailable', function() {
+  it('returns a promise that rejects with a sad error msg if geolocation is unavailable', function() {
     var result;
     fakeWindow.navigator = {};
-    GeoLocationService.getLocation().then(function (data) {
+    GeoLocationService.getLocation().catch(function (data) {
       result = data;
     });
+    errorCB();
     $scope.$apply();
-    expect(result).toEqual(seattleCoords);
+    expect(result).toEqual('your browser does not support geolocation, sorry! so very sorry :<');
   });
+
 });

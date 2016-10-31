@@ -16,7 +16,7 @@
           deferred.resolve(data);
         }, function () {
           // in a real production app, would return an actual error object to make debugging/error handling easier
-          deferred.reject('error pulling data from the API');
+          deferred.reject('error fetching forecast data, please try again');
         });
       } else {
         deferred.reject('getForecast must be passed a coords object that contains latitude and longitude attrs');

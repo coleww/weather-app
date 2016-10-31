@@ -60,6 +60,6 @@ describe('DarkSkyService', function() {
 
     $httpBackend.flush();
     $scope.$apply();
-    expect(result).toEqual('error pulling data from the API');
+    expect(result).toEqual('error fetching forecast data, please try again');
   });
 });

@@ -1,6 +1,11 @@
 <div class="forecast-container">
   <h1 class="header">Five Day Forecast</h1>
   <img src="icons/spin.svg" class="spinner" ng-show="$ctrl.loading"></img>
+
+  <div class="error-msg" ng-show="$ctrl.errorMsg">
+    {{$ctrl.errorMsg}}
+  </div>
+
   <div class="five-day-forecast">
     <forecast-day ng-repeat="data in $ctrl.forecastData" forecast-data="data">
     </forecast-day>
