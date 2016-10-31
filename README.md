@@ -2,7 +2,7 @@ Five Day Forecast
 ----------------------
 
 Simple Angular app that shows your five day weather forecast. 
-The users GPS location data is pulled from the HTML5 Geolocation API. 
+The user's GPS location data is pulled from the HTML5 Geolocation API. 
 Weather data is pulled from [Dark Sky](https://darksky.net) via a proxy Express server.
 
 ### Development
