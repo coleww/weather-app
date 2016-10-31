@@ -4,6 +4,11 @@
 
 body {
   font-family: Tahoma, Geneva, sans-serif;
+  background-color: #DDDDDD;
+}
+
+.header {
+  color: #0074D9;
 }
 
 .attribution {
@@ -22,7 +27,8 @@ body {
 }
 
 .forecast-day {
-  border: 1px solid black;
+  border: 3px solid #7FDBFF;
+  background-color: white;
   border-radius: 5px;
   margin: 5px;
   padding: 5px;
