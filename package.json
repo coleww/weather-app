@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.14.0",
+    "express-https-redirect": "^1.0.0",
     "request": "^2.76.0"
   },
   "devDependencies": {
