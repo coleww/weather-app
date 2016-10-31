@@ -16,13 +16,14 @@ var server = app.listen(app.get('port'), function() {
 
 
 app.get('/api', function(req,res) {
-  console.log('fetching from dark sky...');
   // TODO: check that lat/lon are passed as query params, otherwise return an error
 
   if (process.env.NODE_ENV === "production") {
     var apiUrl = createDarkSkyUrl(req);
+    console.log('fetching from dark sky...');
     request(apiUrl).pipe(res);
   } else {
+    console.log('returning sampleResponse');
     res.send(JSON.stringify(sampleResponse));
   }
 });

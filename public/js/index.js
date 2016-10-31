@@ -11,9 +11,11 @@
   // each component will be passed the data it needs, making testing much simpler
   // TODO: maaaaybe this makes more sense in the forecast component?
   app.controller('MainController', ['$scope', 'GeoLocationService', 'DarkSkyService', function MainController ($scope, GeoLocationService, DarkSkyService) {
+    $scope.loading = true;
     GeoLocationService.getLocation()
       .then(DarkSkyService.getForecast)
       .then(function (forecastData) {
+        $scope.loading = false;
         // pull the forecast for the next 5 days out of the API response
         $scope.forecastData = forecastData.data.daily.data.slice(0, 5);
       }).catch(function (err) {

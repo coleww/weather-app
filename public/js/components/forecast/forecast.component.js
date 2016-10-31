@@ -6,7 +6,8 @@
     component('forecast', {
       templateUrl: 'js/components/forecast/forecast.template.html',
       bindings: {
-        forecastData: '<'
+        forecastData: '<',
+        loading: '<'
       }
     });
 })();
